@@ -2,8 +2,8 @@
 module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define('Product', {
     productName: DataTypes.STRING,
-    description: DataTypes.STRING,
-    image: DataTypes.STRING
+    description: DataTypes.TEXT,
+    image: DataTypes.TEXT
   }, {});
   Product.associate = function (models) {
     const columnMapping = {
