@@ -35,7 +35,7 @@ router.post('/', asyncHandler(async (req, res) => {
 router.get('/comment/:id', asyncHandler(async (req, res) => {
   let id = req.params.id;
   const num = Number(id);
-  console.log(typeof num, '***********************************')
+
   const comments = await Comment.findAll({
     where: {
       productId: num,
@@ -43,7 +43,6 @@ router.get('/comment/:id', asyncHandler(async (req, res) => {
     },
     include: [User]
   })
-  console.log(comments, '8888888888888888888888888888888888888888888')
   res.json(comments);
 }))
 
@@ -55,13 +54,32 @@ router.post('/comment', asyncHandler(async (req, res) => {
     productId,
     userId
   })
+  console.log(newComment);
 
-  // const comments = await Comment.findAll({
-  //   where: { productId: productId },
-  //   include: [User]
-  // })
+  const indComment = await Comment.findByPk(newComment.id, {
+    where: { productId: productId },
+    include: [User]
+  })
 
-  res.json(newComment);
+  res.json(indComment);
+}))
+
+router.delete('/comment', asyncHandler(async (req, res) => {
+  const { comId, prodId } = req.body
+  const num = Number(prodId);
+  const commentNum = Number(comId);
+  const deletedComment = await Comment.findByPk(commentNum);
+  await deletedComment.destroy();
+
+  const comments = await Comment.findAll({
+    where: {
+      productId: num,
+
+    },
+    include: [User]
+  })
+  res.json(comments);
+
 }))
 
 module.exports = router;
