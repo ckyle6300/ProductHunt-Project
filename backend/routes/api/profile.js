@@ -10,7 +10,17 @@ router.get('/:id', asyncHandler(async (req, res) => {
   const num = Number(id);
 
   const userPosts = await User.findByPk(num, {
-    include: [Product, Comment]
+    include: [{
+      model: Comment,
+      include: {
+        model: Product
+      },
+      // model: Product
+    },
+    {
+      model: Product
+    }
+    ]
   })
 
   res.json(userPosts)
