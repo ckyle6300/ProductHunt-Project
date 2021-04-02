@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     productId: DataTypes.INTEGER
   }, {});
   ProductCreator.associate = function (models) {
-    ProductCreator.belongsTo(models.User, { foreignKey: 'userId' })
-    ProductCreator.belongsTo(models.Product, { foreignKey: 'productId' })
+    // ProductCreator.belongsTo(models.User, { foreignKey: 'userId' })
+    // ProductCreator.belongsTo(models.Product, { foreignKey: 'productId' })
   };
   return ProductCreator;
 };
