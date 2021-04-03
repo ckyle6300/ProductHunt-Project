@@ -4,13 +4,16 @@ import sessionReducer from './session';
 import splashReducer from './splash';
 import commentReducer from './comment';
 import profileReducer from './profile';
+import searchReducer from './search';
+
 
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   splashReducer: splashReducer,
   commentReducer: commentReducer,
-  profileReducer: profileReducer
+  profileReducer: profileReducer,
+  searchReducer: searchReducer,
 });
 
 

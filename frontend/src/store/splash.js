@@ -2,8 +2,17 @@ import { csrfFetch } from './csrf';
 
 const GETPOSTS = 'splash/set';
 const ADDPOST = 'splash/add';
+const GETALL = 'splash/getall'
 
 //actions
+export const getAllPosts = (posts) => {
+  return {
+    type: GETALL,
+    payload: posts
+  }
+}
+
+
 export const setPosts = (posts) => {
   return {
     type: GETPOSTS,
@@ -19,6 +28,12 @@ export const addPost = (post) => {
 }
 
 //thunks
+export const getItAll = () => async dispatch => {
+  const response = await csrfFetch('/api/splash/all');
+  const result = await response.json();
+  dispatch(getAllPosts(result));
+}
+
 export const getProducts = () => async dispatch => {
   const response = await csrfFetch('/api/splash');
   if (!response.ok) {
@@ -56,6 +71,13 @@ const initialState = {};
 
 const splashReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GETALL:
+      let allPostObj = {};
+      for (const key in action.payload) {
+
+        allPostObj[Number(action.payload[key].id)] = action.payload[key]
+      }
+      return allPostObj;
     case GETPOSTS:
       let newObj = {};
       for (const key in action.payload) {

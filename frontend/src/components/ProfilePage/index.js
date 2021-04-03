@@ -11,8 +11,6 @@ function ProfilePage() {
   const profile = useSelector(state => Object.values(state.profileReducer)[0])
   const comments = profile?.Comments
   const posts = profile?.Products
-  console.log(profile);
-  console.log(typeof comments)
 
 
   useEffect(() => {
@@ -26,7 +24,7 @@ function ProfilePage() {
       <ul>
         {
           comments?.map((obj) => {
-            console.log(obj)
+
             return (
               <li key={obj?.id}>
                 <p>{obj?.comment}</p>
@@ -44,7 +42,7 @@ function ProfilePage() {
       <ul>
         {
           posts?.map((obj) => {
-            console.log(obj)
+
             return (
               <Link to={`/product/${obj?.id}`}>
                 <li key={obj?.id}>

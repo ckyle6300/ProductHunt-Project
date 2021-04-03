@@ -10,18 +10,18 @@ import Comment from './Comment';
 function PostPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const page = useSelector(state => state.splashReducer[id]);
-  const user = page?.Users[0]
-  const comments = useSelector(state => state.commentReducer)
-  const loggedIn = useSelector(state => state.session.user)
   const num = Number(id);
-
-
 
   useEffect(() => {
     dispatch(getProducts())
     dispatch(getComments(num))
   }, [dispatch, num])
+
+  const page = useSelector(state => state.splashReducer[id]);
+
+  const comments = useSelector(state => state.commentReducer)
+  const loggedIn = useSelector(state => state.session.user)
+  const user = page?.Users[0]
 
   return (
     <div>

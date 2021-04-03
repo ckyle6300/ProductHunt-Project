@@ -9,6 +9,7 @@ import Splash from "./components/Splash";
 import CreatePost from "./components/CreatePost";
 import PostPage from './components/PostPage';
 import ProfilePage from './components/ProfilePage';
+import SearchResults from './components/SearchResult';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,7 @@ function App() {
             <Splash />
           </Route>
           <Route path='/create'>
-            <CreatePost exact={true} path="/create" />
+            <CreatePost />
           </Route>
           <Route path='/product/:id'>
             <PostPage />
@@ -40,8 +41,12 @@ function App() {
           <Route path='/profile/:id' >
             <ProfilePage />
           </Route>
+          <Route path='/search' >
+            <SearchResults />
+          </Route>
         </Switch>
-      )}
+      )
+      }
 
 
     </>

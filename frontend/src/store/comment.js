@@ -26,7 +26,7 @@ export const getComments = (num) => async dispatch => {
     throw response;
   }
   const comments = await response.json();
-  console.log(comments)
+
   dispatch(setComments(comments));
 }
 
