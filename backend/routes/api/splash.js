@@ -5,6 +5,13 @@ const { Product, ProductCreator, User, Comment } = require('../../db/models');
 
 const router = express.Router();
 
+router.get('/all', asyncHandler(async (req, res) => {
+  const products = await Product.findAll({
+    include: [Comment, User]
+  });
+  res.json(products)
+}))
+
 router.get('/', asyncHandler(async (req, res) => {
   // Get Home Page
   const products = await Product.findAll({
@@ -54,7 +61,6 @@ router.post('/comment', asyncHandler(async (req, res) => {
     productId,
     userId
   })
-  console.log(newComment);
 
   const indComment = await Comment.findByPk(newComment.id, {
     where: { productId: productId },

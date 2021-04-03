@@ -5,6 +5,12 @@ const { Product, ProductCreator, User, Comment } = require('../../db/models');
 
 const router = express.Router();
 
+router.get('/all', asyncHandler(async (req, res) => {
+  const profiles = await User.findAll();
+
+  res.json(profiles);
+}))
+
 router.get('/:id', asyncHandler(async (req, res) => {
   const id = req.params.id
   const num = Number(id);
