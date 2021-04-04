@@ -1,0 +1,76 @@
+.profilehead{
+  display: flex;
+  background-color: tan;
+  width: 80%;
+  margin: .5rem auto;
+}
+
+.imgdiv{
+  margin: 1rem;
+}
+
+.profimg {
+  max-height: 10rem;
+  border-radius: 5rem;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  width: 74%;
+  margin: auto;
+}
+
+.comlist {
+  width: 40%;
+  margin: 0px;
+}
+
+.comlist p{
+  margin: .2rem;
+}
+
+.comlist ul {
+  list-style-type: none;
+}
+
+.comlist a {
+  text-decoration: none;
+  color: #FF7034;
+}
+
+.comitem{
+  background-color: white;
+}
+
+.bottom h2 {
+  background-color: white;
+  text-align: center;
+}
+
+.prodcont {
+  display: flex;
+  background-color: white;
+}
+
+.prodDiv {
+  width: 40%;
+}
+
+.prodDiv ul {
+  list-style-type: none;
+}
+
+.prodDiv a {
+  text-decoration: none;
+  color:black
+}
+
+.prodImg {
+  max-height: 3.7rem;
+  margin: .5rem;
+}
+
+.listItem {
+  border: 2px solid #e8e8e8;
+}

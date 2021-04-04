@@ -4,6 +4,7 @@ import { getItAll } from '../../store/splash';
 import { getAllOfThemP } from '../../store/profile'
 import { Link } from 'react-router-dom';
 import Search from '../Search'
+import styles from './searchResult.module.css'
 
 function SearchResults() {
   const dispatch = useDispatch();
@@ -25,38 +26,53 @@ function SearchResults() {
   }, [dispatch])
 
   return (
-    <div>
-      <Search />
-      <h3>Users</h3>
-      <ul>
-        {userResults.map(user => {
-          return (
-            <div>
-              <Link to={`/profile/${user.id}`}>
-                <img src={user.picture || 'https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_male_person_user_work-128.png'} />
-                <p>{user.username}</p>
-              </Link>
-            </div>
-          )
-        })}
-      </ul>
-
-      <h3>products</h3>
-      <ul>
-        {
-          prodResults.map(product => {
-            return (
-              <div>
-                <Link to={`/product/${product.id}`}>
-                  <img src={product?.image} />
-                  <p>{product?.productName}</p>
-                </Link>
-              </div>
-            )
-          })
-        }
-      </ul>
-    </div>
+    <>
+      <div className={styles.search}><Search /></div>
+      <div className={styles.outerDiv}>
+        <div className={styles.users}>
+          <h3>Users</h3>
+          <ul>
+            {userResults.map(user => {
+              return (
+                <div className={styles.userList}>
+                  <div>
+                    <Link to={`/profile/${user.id}`}>
+                      <img className={styles.userImg} src={user.picture || 'https://cdn0.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_boss_client_male_person_user_work-128.png'} />
+                    </Link>
+                  </div>
+                  <div className={styles.userInfo}>
+                    <Link to={`/profile/${user.id}`}>
+                      <p>{user.username}</p>
+                    </Link>
+                  </div>
+                </div>
+              )
+            })}
+          </ul>
+        </div>
+        <div className={styles.product}>
+          <h3>Products</h3>
+          <ul>
+            {
+              prodResults.map(product => {
+                return (
+                  <Link to={`/product/${product.id}`}>
+                    <div className={styles.list}>
+                      <div className={styles.imgDiv}>
+                        <img src={product?.image} />
+                      </div>
+                      <div className={styles.prodInfo}>
+                        <p>{product?.productName}</p>
+                      </div>
+                    </div>
+                  </ Link >
+                )
+              })
+            }
+          </ul>
+        </div>
+      </div>
+    </>
   )
 }
 

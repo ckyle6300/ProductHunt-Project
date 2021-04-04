@@ -1,0 +1,46 @@
+.outerDiv {
+  width: 70%;
+  margin: auto;
+  font-family: sans-serif;
+}
+
+.outerDiv ul {
+  list-style-type: none;
+}
+
+.listDiv {
+  background-color: tan;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  border-bottom: #e8e8e8 solid .25px;
+  border-top: #e8e8e8 solid .25px;
+  border-left: #e8e8e8 solid 2px;
+  border-right: #e8e8e8 solid 2px;
+}
+
+body {
+  background-color: #e8e8e8;
+  font-family: sans-serif;
+}
+
+.picDiv a{
+  height: 85%;
+  margin: 1rem 1rem;
+  display: flex;
+}
+
+.picDiv img {
+  max-height: 4rem;
+}
+
+.info {
+  height: 85%;
+  margin-left: 1.5rem;
+}
+
+.info a {
+  text-decoration: none;
+  color: black;
+}
+

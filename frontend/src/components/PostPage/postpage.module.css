@@ -1,0 +1,85 @@
+.outerDiv {
+  width: 60%;
+  margin: 0rem auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.upper {
+  margin: 1.5rem;
+  text-align: center;
+  background-color: white;
+}
+
+.upper img {
+  max-height: 25rem;
+  max-width: 25rem;
+}
+
+.upper p {
+  text-align: left;
+  width: 85%;
+  margin: 1rem auto;
+}
+
+.avatar {
+  height: 3.5rem;
+  border-radius: 2rem ;
+  text-align: right;
+}
+
+.comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment textarea {
+  height: 4rem;
+  width: 18rem;
+}
+
+.button {
+  margin-top: .5rem;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.button button {
+  background-color: #4F6272;
+  color: #DDC3D0;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.comList {
+  background-color: white;
+  list-style-type: none;
+  border: .1rem solid #e8e8e8;
+  width: 95%;
+}
+
+.comInfo {
+  display: flex;
+  margin: .3rem;
+}
+
+.compic img {
+  height: 1.7rem;
+}
+
+.combody {
+  margin-left: 1.5rem;
+}
+
+.combody p {
+  margin: 0px
+}
+
+.comList button {
+  background-color: #D65108;
+}
+
+.combody h4 {
+  margin: 0px;
+}

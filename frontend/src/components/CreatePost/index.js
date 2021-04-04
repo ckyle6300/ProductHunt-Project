@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { createProduct } from '../../store/splash';
 import { useHistory } from "react-router-dom";
+import styles from './CreatePost.module.css'
 
 function CreatePost() {
   const history = useHistory();
@@ -27,36 +28,33 @@ function CreatePost() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Title
+    <div className={styles.outerDiv}>
+      <h3>Create A Post</h3>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <input
           type="text"
           value={productName}
           onChange={(e) => setProductName(e.target.value)}
           required
+          placeholder="Title"
         />
-      </label>
-      <label>
-        Image Url
         <input
           type="text"
           value={image}
           onChange={(e) => setImage(e.target.value)}
           required
+          placeholder="Image Url"
         />
-      </label>
-      <label>
-        Product Description
-        <input
+        <textarea
           type="text"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
+          placeholder="Product Description"
         />
-      </label>
-      <button type="submit">Post</button>
-    </form>
+        <button type="submit">Post</button>
+      </form>
+    </div>
   );
 }
 

@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { getProducts } from '../../store/splash'
 import Post from './Post';
+import styles from './splash.module.css';
 
 function Splash() {
 
@@ -20,11 +21,11 @@ function Splash() {
 
 
   return (
-    <>
+    <div className={styles.outerDiv}>
       <ul>
         <li>{splashElements}</li>
       </ul>
-    </>
+    </div>
   )
 }
 

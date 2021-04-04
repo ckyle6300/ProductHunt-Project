@@ -1,0 +1,53 @@
+.outerDiv {
+  display: flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  align-content: center;
+  width: 80%;
+  margin:auto;
+  padding: .2em;
+  background-color: #4F6272;
+}
+
+.outerDiv a {
+  margin: auto;
+  text-decoration: none;
+  color: white;
+}
+
+.outerDiv div {
+  background-color: #FF7034;
+  border-radius: 10px;
+  margin: auto;
+  padding: .25rem;
+}
+
+.outerDiv span {
+  margin:auto;
+  color: white;
+}
+
+.outerDiv ul {
+  list-style-type: none;
+}
+
+#search {
+  background-color: #4F6272;
+  padding: auto 0px;
+}
+
+#search form {
+  margin: auto;
+}
+
+#search button {
+  border-radius: 10px;
+  padding: .3rem;
+  margin: .17rem;
+}
+
+#search input {
+  border-radius: 10px;
+  padding: .3rem;
+}
+

@@ -1,0 +1,94 @@
+
+.search {
+  width:80%;
+  padding: auto 0px;
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+.search form {
+  margin: auto;
+}
+
+.search button {
+  border-radius: 10px;
+  padding: .3rem;
+  margin: .17rem;
+  background-color: #777259;
+  color: #DDC3D0
+}
+
+.search input {
+  border-radius: 10px;
+  padding: .3rem;
+  width:40%;
+  font-size: medium;
+}
+
+.outerDiv {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.users {
+  width: 30%;
+}
+
+.product {
+  width:30%;
+}
+
+.userList {
+  display: flex;
+  background-color: white;
+  border: #e8e8e8 solid .25px;
+}
+
+.userList a {
+  text-decoration: none;
+  color: black;
+  padding: .5rem;
+  margin: 1rem .2rem;
+}
+
+.userImg {
+  border-radius: 3.5rem;
+  max-height: 4.5rem;
+  margin: .1rem auto ;
+}
+
+.userInfo {
+  margin: auto .3rem ;
+}
+
+.list{
+  display: flex;
+  background-color: white;
+  border: #e8e8e8 solid .25px;
+}
+
+.list img {
+  max-height: 4.5rem;
+  margin: .1rem auto ;
+}
+
+.imgDiv {
+  margin: .4rem;
+}
+
+
+.prodInfo {
+  margin: auto .1rem;
+}
+
+.outerDiv h3 {
+  text-align: center;
+  background-color: white;
+}
+
+.outerDiv a {
+  text-decoration: none;
+  color: black;
+}

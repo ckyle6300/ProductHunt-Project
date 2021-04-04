@@ -1,0 +1,38 @@
+.outerDiv {
+  width: 80%;
+  margin: auto;
+}
+
+.outerDiv h3 {
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 45%;
+  background-color: #777259;
+  padding-bottom: 2rem;
+  border-radius: 1rem;
+  margin:2rem auto;
+}
+
+.form input {
+  margin: .3rem 10%;
+  padding: .3rem;
+  border-radius: .4rem;
+}
+
+.form button {
+  width: 40%;
+  margin: .3rem auto;
+  padding: .25rem;
+  border-radius: .2rem;
+  background-color: #DDC3D0;
+}
+
+.form ul {
+  color: white;
+  list-style-type: none;
+}

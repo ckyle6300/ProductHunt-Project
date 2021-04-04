@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { createComment } from '../../store/comment';
 import { useDispatch } from 'react-redux';
+import styles from './postpage.module.css';
 
 const CommentForm = ({ id, product }) => {
   const dispatch = useDispatch();
@@ -21,13 +22,19 @@ const CommentForm = ({ id, product }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <textarea
-        name="comment"
-        onChange={(e) => setComment(e.target.value)}
-        value={comment}>
-        testing
+      <div>
+        <div>
+          <textarea
+            name="comment"
+            onChange={(e) => setComment(e.target.value)}
+            value={comment}>
+            testing
       </textarea>
-      <button type="submit">Post Comment</button>
+        </div>
+        <div className={styles.button}>
+          <button type="submit">Post Comment</button>
+        </div>
+      </div>
     </form>
   )
 }

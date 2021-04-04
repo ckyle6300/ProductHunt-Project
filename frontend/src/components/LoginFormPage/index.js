@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import styles from './LoginForm.module.css'
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -24,31 +25,37 @@ function LoginFormPage() {
       });
   }
 
+  const demo = () => {
+    setCredential('demo@demo.com')
+    setPassword('demodemo')
+  }
+
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-      </ul>
-      <label>
-        Username or Email
+    <div className={styles.outerDiv}>
+      <h3>Log In</h3>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <ul>
+          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
         <input
           type="text"
           value={credential}
           onChange={(e) => setCredential(e.target.value)}
           required
+          placeholder='Username or Email'
         />
-      </label>
-      <label>
-        Password
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
+          placeholder="Password"
         />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+        <button type="submit">Log in</button>
+        <button onClick={demo}>Demo User</button>
+      </form>
+
+    </div>
   );
 }
 

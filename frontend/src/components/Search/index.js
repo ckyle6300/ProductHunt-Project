@@ -14,7 +14,8 @@ function Search() {
     e.preventDefault();
     const data = search;
     dispatch(getData(data))
-    history.push('search');
+    setSearch('');
+    history.push('/search');
   }
 
 
